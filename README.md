@@ -235,9 +235,6 @@ Now we can run the study
 study.run()
 ```
 
-    100%
-
-
 That's it we have the results ! Here we defined each part (dataset, model, and study) by hand but you can define your own classes to avoid having to do it everytime (see the Define your own studies part).
 
 # Analyses
@@ -315,9 +312,6 @@ ls_study = CollectLogProbsStudy(ls_dataset,model,name='logscores')
 ls_study.run()
 ```
 
-    100%
-
-
 Now let's run the analysis
 
 
@@ -350,8 +344,10 @@ Here are all the loggraphs :
 ```python
 plt.figure(figsize=(10,10))
 for i in range(4):
-    plt.subplot(2,2,i+1)
+    ax = plt.subplot(2,2,i+1)
     logscore_analysis.plot_index(i)
+    ax.set_title(str(i))
+plt.tight_layout()
 plt.legend()
 plt.show()
 ```
@@ -430,9 +426,6 @@ ls_study.run(update_objects=True)
 logscore_analysis = LogScoreAnalysis(ls_study)
 ```
 
-    100%
-
-
 
 ```python
 logscore_analysis.plot_comparison()
@@ -455,6 +448,7 @@ for i in range(4):
     ax = plt.subplot(2,2,i+1)
     logscore_analysis.plot_index(i)
     ax.set_title(str(i))
+plt.tight_layout()
 plt.legend()
 plt.show()
 ```
@@ -497,5 +491,59 @@ for i,q in enumerate(ls_dataset):
     7
     4
     3
+    
+
+
+# Saving and Time Capsule
+
+In this framework when you run 
+```python
+study.run()
+```
+the results are stored in 2 files :
+- data.json which contains the output data as well as some of the input data
+- study.p which is a pickle version of the study object.
+
+These files are stored in a path relative to the content of the training (names or study, dataset and model to be more precise).
+If another study is run with the same pathing instead of running it will load the study.p file with the data in data.json. This is the concept the framework is based on for 
+- Saving and Loading data accordingly (if you build a study with the same path as another that has already run) it means you are running the same study as the one before and the framework shouldn't compute the same data twice : it loads the previous one.
+- Time capsule : it saves the environment in which you ran each experiment. Therefore you can load the exact environment even 10 years later to replicate old results when needed even if the framework has changed in between.
+
+When creating a Study object and running it so that it loads a previous study it will drop the study object you built to load the study.p . If you want to update the study.p file you can use the ```python study.run(update_objects=True)``` parameter to keep the version of study you built and erase the study.p file to replace it with the study built.
+
+If you don't want to load the data and recompute it you can use ```python study.run(update_data=True)```.
+
+The default value of these parameters is False and both can be used together.
+
+
+```python
+study.run(update_objects=True,update_data=True)
+```
+
+    100%
+
+
+
+```python
+accuracy_analysis2 = AccuracyAnalysis(study)
+
+print('First run (data are now discarded from the data.json file)')
+accuracy_analysis.plot()
+plt.show()
+
+print('Second run (new data in the data.json file)')
+accuracy_analysis2.plot()
+plt.show()
+```
+
+
+    
+![png](main_files/main_68_0.png)
+    
+
+
+
+    
+![png](main_files/main_68_1.png)
     
 
