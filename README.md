@@ -265,10 +265,10 @@ accuracy_analysis.data
 
 
 
-    array([[5., 0.],
-           [5., 0.],
-           [0., 5.],
-           [3., 2.]])
+    array([[10.,  0.],
+           [10.,  0.],
+           [ 1.,  9.],
+           [ 6.,  4.]])
 
 
 
@@ -536,14 +536,20 @@ accuracy_analysis2.plot()
 plt.show()
 ```
 
-
-    
-![png](main_files/main_68_0.png)
-    
+    First run (data are now discarded from the data.json file)
 
 
 
     
 ![png](main_files/main_68_1.png)
+    
+
+
+    Second run (new data in the data.json file)
+
+
+
+    
+![png](main_files/main_68_3.png)
     
 
