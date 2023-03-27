@@ -1,0 +1,22 @@
+[
+    {
+        "prompt": "In a hole in the ground there lived a hobbit.\n\nNot a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.",
+        "keywords": {},
+        "info": {}
+    },
+    {
+        "prompt": "So long as there shall exist, by virtue of law and custom, decrees of damnation pronounced by society, artificially creating hells amid the civilization of earth, and adding the element of human fate to divine destiny; so long as the three great problems of the century—the degradation of man through pauperism, the corruption of woman through hunger, the crippling of children through lack of opportunity—are unsolved; so long as social asphyxia is possible in any part of the world;—in other words, and with a still wider significance, so long as ignorance and poverty exist on earth, books of the nature of Les Misérables cannot fail to be of use.",
+        "keywords": {},
+        "info": {}
+    },
+    {
+        "prompt": "The A is better than the B.\nThe B is better than the C.\nThe C is better than the D.\nThe D is better than the E.\nThe E is better than the F.\nThe F is better than the G.\nThe G is better than the H.\nThe H is better than the I.\nThe I is better than the J.\nThe J is better than the K.",
+        "keywords": {},
+        "info": {}
+    },
+    {
+        "prompt": "You need to escape the \\ in your string (turning it into a double-\\), otherwise it will become a newline in the JSON source, not the JSON data.",
+        "keywords": {},
+        "info": {}
+    }
+]

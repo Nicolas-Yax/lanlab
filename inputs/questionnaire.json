@@ -1,0 +1,40 @@
+[
+    {
+        "prompt": "What is 2+2 ?",
+        "keywords": {
+            "correct": [
+                "4",
+                "four"
+            ]
+        },
+        "info": {}
+    },
+    {
+        "prompt": "What is the Capital of France ?",
+        "keywords": {
+            "correct": [
+                "Paris"
+            ]
+        },
+        "info": {}
+    },
+    {
+        "prompt": "What is the air speed velocity of an unladen swallow ?",
+        "keywords": {
+            "correct": [
+                "24","11"
+            ]
+        },
+        "info": {}
+    },
+
+    {
+        "prompt": "Here is a list of 16 numbers. What is the next one ?\n7\n4\n3\n7\n4\n3\n7\n4\n3\n7\n4\n3\n7\n4\n3\n",
+        "keywords": {
+            "correct": [
+                "7"
+            ]
+        },
+        "info": {}
+    }
+]
